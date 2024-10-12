@@ -7,7 +7,7 @@ if (process.env.NODE_ENV != "production") {
 
 
 //basic database setup
-
+const cors = require("cors")
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -44,7 +44,7 @@ async function main() {
   await mongoose.connect(dbUrl);  
 }
 
-
+app.use(cors)
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views")) 
 app.use(express.urlencoded({extended: true}));
