@@ -34,6 +34,75 @@
     align-items: center;
     display: flex;
   }
+/* Base styles for the filters container */
+#filters {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of filter items */
+    justify-content: center; /* Center the filter items */
+}
+
+/* Styling for each filter item */
+.filter {
+    display: flex;
+    flex-direction: column; /* Default layout remains as column */
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 8px;
+    margin: 0.5rem; /* Add margin for spacing */
+}
+
+/* Filter icon styling */
+.filter div i {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 0.5rem; /* Margin for column layout */
+}
+
+/* Filter text styling */
+.filter p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Hover effect for filters */
+/* .filter:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+} */
+
+/* Media Queries for responsiveness */
+
+/* For tablets and mobile devices (less than 992px) */
+@media (max-width: 991px) {
+    #filters {
+        justify-content: space-around; /* Space out items */
+        flex-direction: row; /* Ensure all items are in a single row */
+        flex-wrap: nowrap; /* Prevent wrapping to the next line */
+        overflow-x: auto; /* Allow horizontal scrolling if necessary */
+    }
+
+    .filter {
+        flex-direction: column; /* Keep the column layout for filter items */
+        align-items: center; /* Center items vertically */
+        width: auto; /* Remove fixed width for better spacing */
+        margin: 0.5rem; /* Add margin for spacing */
+    }
+
+    .filter div i {
+        font-size: 1.3rem; /* Slightly smaller icon for mobile */
+        margin-bottom: 0; /* Remove margin-bottom for row layout */
+        margin-right: 0.5rem; /* Add margin-right for spacing */
+    }
+
+    .filter p {
+        font-size: 0.85rem; /* Smaller text for mobile */
+    }
+}
+
 </style>
 
 
